@@ -8,3 +8,6 @@
 
 # Visual Studio Code History
 .history/
+
+# Node.js
+node_modules/
