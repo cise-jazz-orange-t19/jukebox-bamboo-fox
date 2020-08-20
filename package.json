@@ -3,14 +3,15 @@
   "description": "just another playground",
   "author": "Micheal Chan",
   "version": "0.0.1",
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^7.7.0"
+  },
   "scripts": {
     "test": "eslint hello.js",
     "eslint": "eslint helloworld.js",
     "echo": "echo hello"
   },
   "dependencies": {
-    "eslint": "^7.7.0",
     "p5.gif": "^1.0.6"
   }
 }
