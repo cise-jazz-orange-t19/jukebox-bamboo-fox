@@ -5,8 +5,9 @@
   "version": "0.0.1",
   "devDependencies": {},
   "scripts": {
-    "test": "npm test",
-    "eslint": "eslint helloworld.js"
+    "test": "eslint hello.js",
+    "eslint": "eslint helloworld.js",
+    "echo": "echo hello"
   },
   "dependencies": {
     "eslint": "^7.7.0",
