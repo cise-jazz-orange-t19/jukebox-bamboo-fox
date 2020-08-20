@@ -1,14 +1,15 @@
 {
-  "name": "learn-travis-YOURNAME",
-  "description": "Simple Travis-CI check for JSHint (Code Linting)",
-  "author": "your name here :-)",
+  "name": "jukebox-bamboo-fox",
+  "description": "just another playground",
+  "author": "Micheal Chan",
   "version": "0.0.1",
-  "devDependencies": {
-    "jshint": "^2.6.0",
-    "eslint": "^7.6.0"
-  },
+  "devDependencies": {},
   "scripts": {
-    "test": "jshint helloworld.js"
-
+    "test": "npm test",
+    "eslint": "eslint helloworld.js"
+  },
+  "dependencies": {
+    "eslint": "^7.7.0",
+    "p5.gif": "^1.0.6"
   }
 }
