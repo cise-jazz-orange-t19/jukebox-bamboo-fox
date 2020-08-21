@@ -8,9 +8,7 @@
     "eslint-config-p5js": "^1.0.1"
   },
   "scripts": {
-    "test": "echo running test script",
-    "eslint": "eslint helloworld.js",
-    "end":"completed running end script"
+    "test": "echo test"
   },
   "dependencies": {
     "p5": "^1.1.9",

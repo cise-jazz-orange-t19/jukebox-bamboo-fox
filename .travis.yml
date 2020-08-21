@@ -2,4 +2,24 @@ language: node_js
 node_js:
   - 12
 before_install:
+  - ehco testing before_install stage
   - npm install
+install:
+  - ehco testing install stage
+before_script:
+  - ehco testing before script stage
+script:
+  - ehco testing script stage
+  - eslint helloworld.js
+before_cache:
+  - ehco testing before_cache stage
+after_success:
+  - ehco testing script stage
+after_failure:
+  - ehco testing after_failure stage
+before_deploy:
+  - ehco testing before_deploy stage
+after_deploy:
+  - ehco testing after_deploy stage
+after_script:
+  - ehco testing after_script stage
