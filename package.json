@@ -8,17 +8,7 @@
     "eslint-config-p5js": "^1.0.1"
   },
   "scripts": {
-    "before_install_test": "echo testing |before_install| stage",
-    "install_test": "echo testing |install| stage",
-    "before_script_test": "echo testing |before_script| stage",
-    "script_test": "echo testing |script| stage",
-    "eslint_helloworld": "eslint helloworld.js",
-    "before_cache_test": "echo testing |before_cache| stage",
-    "after_success_test": "echo testing |after_success| stage",
-    "after_failure_test": "echo testing |after_failure| stage",
-    "before_deploy_test": "echo testing |before_deploy| stage",
-    "after_deploy_test": "echo testing |after_deploy| stage",
-    "after_script_test": "echo testing |after_script| stage"
+    "test": "echo test"
   },
   "dependencies": {
     "p5": "^1.1.9",

@@ -2,29 +2,6 @@ language: node_js
 node_js:
   - 12
 before_install:
-<<<<<<< HEAD
-  - npm before_install
-  - npm install
-install:
-  - npm install_test
-before_script:
-  - npm before_script_test
-script:
-  - npm script_test
-  - npm eslint_helloworld
-before_cache:
-  - npm before_cache_test
-after_success:
-  - npm after_success_test
-after_failure:
-  - npm after_failure_test
-before_deploy:
-  - npm before_deploy_test
-after_deploy:
-  - npm after_deploy_test
-after_script:
-  - npm after_script_test
-=======
   - ehco testing before_install stage
   - npm install
 install:
@@ -46,4 +23,3 @@ after_deploy:
   - ehco testing after_deploy stage
 after_script:
   - ehco testing after_script stage
->>>>>>> parent of ba52490... Fixed mispelled command in scripts
