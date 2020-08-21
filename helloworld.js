@@ -6,10 +6,13 @@ var path = require("path");
 // Using the filesystem module
 var fs = require("fs");
 
-var server = http.createServer(handleRequest);
-server.listen(8080);
+var hostname = "127.0.0.1";
+var port = 3000;
 
-console.log("Server started on port 8080");
+var server = http.createServer(handleRequest);
+server.listen(port, hostname);
+
+console.log(`Server running at http://${hostname}:${port}/`);
 
 function handleRequest(req, res) {
 	// What did we request?

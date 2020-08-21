@@ -4,7 +4,8 @@
   "author": "Micheal Chan",
   "version": "0.0.1",
   "devDependencies": {
-    "eslint": "^7.7.0"
+    "eslint": "^7.7.0",
+    "eslint-config-p5js": "^1.0.1"
   },
   "scripts": {
     "test": "eslint hello.js",
@@ -12,6 +13,8 @@
     "echo": "echo hello"
   },
   "dependencies": {
-    "p5.gif": "^1.0.6"
+    "p5": "^1.1.9",
+    "p5.gif": "^1.0.6",
+    "p5.touchgui": "^0.5.2"
   }
 }
