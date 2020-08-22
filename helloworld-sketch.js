@@ -38,10 +38,10 @@ function draw() {
 	let r = sliderRed.value();
 	let g = sliderGreen.value();
 	let b = sliderBlue.value();
-	colorMode(RGB, 100);
+	//colorMode(RGB, 100);
 	background(r, g, b);
 
-	visuals();
+	drawVisuals();
 
 	textAlign(RIGHT);
 	drawWords(width * 0.25);
@@ -76,10 +76,8 @@ function playSong() {
 	}
 }
 
-function visuals() {
+function drawVisuals() {
 	let rms = analyzer.getLevel();
-	fill(255);
-	stroke(0);
 
 	ellipse(width / 2, height / 2, 10 + rms * 200, 10 + rms * 200);
 }
