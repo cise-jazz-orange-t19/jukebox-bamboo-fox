@@ -3,5 +3,6 @@ node_js:
   - 12
 before_install:
   - npm install
+  - echo "[echo test] before_install stage" && exit 0
 script:
   - npx eslint helloworld-sketch.js && echo "${PIPESTATUS}"
