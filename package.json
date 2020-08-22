@@ -4,8 +4,6 @@
   "description": "Just another playground",
   "main": "helloworld.js",
   "dependencies": {
-    "p5": "^1.1.9",
-    "p5.touchgui": "^0.5.2"
   },
   "devDependencies": {
     "eslint": "^7.7.0",
