@@ -4,5 +4,7 @@ node_js:
 before_install:
   - npm install
   - echo "[echo test] before_install stage" && exit 0
+before_script:
+  - echo "[echo test] before_script stage" && exit 0
 script:
-  - npx eslint helloworld-sketch.js && echo "${PIPESTATUS}"
+  - eslint helloworld-sketch.js && echo "${PIPESTATUS}"
