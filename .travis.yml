@@ -1,6 +1,7 @@
-language: nodejs
-before_script:
-  npm install
-
+language: node_js
+node_js:
+  - 12
+before_install:
+  - npm install
 script:
-  npm test
+  - eslint helloworld.js

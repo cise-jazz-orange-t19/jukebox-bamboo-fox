@@ -1,12 +1,29 @@
 {
-  "name": "jiang",
+  "name": "jukebox-bamboo-fox",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo successufl"
+  "description": "Just another playground",
+  "main": "helloworld.js",
+  "dependencies": {
+    "p5": "^1.1.9"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "devDependencies": {
+    "eslint": "^7.7.0",
+    "eslint-config-p5js": "^1.0.1"
+  },
+  "scripts": {
+    "test": "eslint --env-info"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cise-jazz-orange-t19/jukebox-bamboo-fox.git"
+  },
+  "keywords": [
+    "sandbox"
+  ],
+  "author": "Micheal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/cise-jazz-orange-t19/jukebox-bamboo-fox/issues"
+  },
+  "homepage": "https://github.com/cise-jazz-orange-t19/jukebox-bamboo-fox#readme"
 }
