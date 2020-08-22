@@ -4,44 +4,50 @@ let songButton;
 let sliderRed;
 let sliderGreen;
 let sliderBlue;
-let song, analyzer;
+let song, amplitude, fft, peakDetect;
+var ellipseWidth = 10;
 
 function preload() {
-	song = loadSound('assets/LOOP14.mp3');
+	song = loadSound("assets/LOOP14.mp3");
 }
 
 function setup() {
 	createCanvas(710, 400);
 	background(160);
 
-	analyzer = new p5.Amplitude();
-	analyzer.setInput(song);
+	fft = new p5.FFT();
+	peakDetect = new p5.PeakDetect();
+
+	amplitude = new p5.Amplitude();
+	amplitude.setInput(song);
 
 	textSize(fontsize);
 	textAlign(CENTER, CENTER);
 
-	saveButton = createButton('save image');
+	saveButton = createButton("save image");
 	saveButton.mousePressed(saveImage);
 
-	songButton = createButton('play song');
+	songButton = createButton("play song");
 	songButton.mousePressed(playSong);
 	sliderRed = createSlider(0, 255, 0, 0);
-	sliderRed.style('width', '80px');
+	sliderRed.style("width", "80px");
 
 	sliderGreen = createSlider(0, 255, 0, 0);
-	sliderGreen.style('width', '80px');
+	sliderGreen.style("width", "80px");
 	sliderBlue = createSlider(0, 255, 0, 0);
-	sliderBlue.style('width', '80px');
+	sliderBlue.style("width", "80px");
 }
 
 function draw() {
 	let r = sliderRed.value();
 	let g = sliderGreen.value();
 	let b = sliderBlue.value();
-	//colorMode(RGB, 100);
+	colorMode(RGB, 100);
 	background(r, g, b);
 
-	drawVisuals();
+	fft.analyze();
+	peakDetect.update(fft);
+	let rms = amplitude.getLevel();
 
 	textAlign(RIGHT);
 	drawWords(width * 0.25);
@@ -52,6 +58,15 @@ function draw() {
 	textAlign(LEFT);
 	drawWords(width * 0.75);
 
+	fill(41, 204, 0, 30);
+	stroke(10);
+
+	if (peakDetect.isDetected) {
+		ellipseWidth = 20;
+	} else {
+		ellipseWidth *= 0.95;
+	}
+	ellipse(width / 2, height / 2, 10 + rms * ellipseWidth * 200, 10 + rms * ellipseWidth * 200);
 }
 
 function drawWords(x) {
@@ -69,19 +84,14 @@ function drawWords(x) {
 }
 
 function playSong() {
-	if (song.isPlaying() == false) {
+	let a = song.isPlaying();
+	if (a == false) {
 		song.play();
 	} else {
 		song.stop();
 	}
 }
 
-function drawVisuals() {
-	let rms = analyzer.getLevel();
-
-	ellipse(width / 2, height / 2, 10 + rms * 200, 10 + rms * 200);
-}
-
 function saveImage() {
-	save('hello-world.jpg');
+	save("hello-world.jpg");
 }
