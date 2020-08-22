@@ -4,4 +4,4 @@ node_js:
 before_install:
   - npm install
 script:
-  - eslint helloworld.js && echo ${PIPESTATUS}
+  - eslint helloworld.js
