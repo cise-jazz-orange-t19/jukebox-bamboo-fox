@@ -2,24 +2,24 @@ language: node_js
 node_js:
   - 12
 before_install:
-  - echo testing before_install stage
-  - npm install
+  - "echo \"Test: echo before_install stage\" && exit 0"
+  - "npm install"
 install:
-  - echo testing install stage
+  - "echo \"Test: echo install stage\" && exit 0"
 before_script:
-  - echo testing before script stage
+  - "echo \"Test: echo before_script stage\" && exit 0"
 script:
-  - echo testing script stage
-  - eslint helloworld.js
+  - "echo \"Test: echo script stage\" && exit 0"
+  - "npx eslint helloworld-sketch.js && echo "${PIPESTATUS}""
 before_cache:
-  - echo testing before_cache stage
+  - "echo \"Test: echo before_cache stage\" && exit 0"
 after_success:
-  - echo testing script stage
+  - "echo \"Test: echo after_success stage\" && exit 0"
 after_failure:
-  - echo testing after_failure stage
+  - "echo \"Test: echo after_failure stage\" && exit 0"
 before_deploy:
-  - echo testing before_deploy stage
+  - "echo \"Test: echo before_deploy stage\" && exit 0"
 after_deploy:
-  - echo testing after_deploy stage
+  - "echo \"Test: echo after_deploy stage\" && exit 0"
 after_script:
-  - echo testing after_script stage
+  - "echo \"Test: echo after_script stage\" && exit 0"

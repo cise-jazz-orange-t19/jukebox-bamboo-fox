@@ -45,7 +45,7 @@ function draw() {
 	if (frameCount === 1) recorder.download();
 }
 
-function drawWords(x) {
+function drawWords(x){
 	fill(0);
 	text("hello", x, 80);
 

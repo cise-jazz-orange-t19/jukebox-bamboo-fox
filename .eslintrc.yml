@@ -1,10 +1,13 @@
 env:
+  browser: true
   commonjs: true
   es2020: true
   node: true
-extends:
-    - 'eslint:recommended'
-    - 'p5js'
+extends: 
+  - eslint:recommended
+  - p5js
+  - p5js/dom
+  - p5js/sound
 parserOptions:
   ecmaVersion: 11
 rules:
