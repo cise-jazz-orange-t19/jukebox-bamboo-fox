@@ -1,29 +1,26 @@
 {
-  "name": "jukebox-bamboo-fox",
+  "name": "dailyp5",
   "version": "1.0.0",
-  "description": "Just another playground",
-  "main": "helloworld.js",
-  "dependencies": {
-    "p5": "^1.1.9"
-  },
-  "devDependencies": {
-    "eslint": "^7.7.0",
-    "eslint-config-p5js": "^1.0.1"
-  },
+  "description": "A gallery website for p5.js sketches built with Next.js",
+  "main": "index.js",
   "scripts": {
-    "test": "eslint --env-info"
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "next build",
+    "export": "next build & next export",
+    "deploy": "now",
+    "new-sketch": "scripts/new-sketch.sh",
+    "postinstall": "next build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/cise-jazz-orange-t19/jukebox-bamboo-fox.git"
-  },
-  "keywords": [
-    "sandbox"
-  ],
-  "author": "Micheal",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/cise-jazz-orange-t19/jukebox-bamboo-fox/issues"
-  },
-  "homepage": "https://github.com/cise-jazz-orange-t19/jukebox-bamboo-fox#readme"
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "isomorphic-unfetch": "^3.0.0",
+    "next": "^9.5.2",
+    "next-routes": "^1.4.2",
+    "p5wrappers": "0.0.4",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-p5-wrapper": "^2.3.0"
+  }
 }
