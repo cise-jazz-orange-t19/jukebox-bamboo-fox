@@ -1,7 +1,7 @@
 # Jukebox-Bamboo-Fox Sandbox
 [![Build Status](https://travis-ci.com/cise-jazz-orange-t19/jukebox-bamboo-fox.svg?branch=develop)](https://travis-ci.com/cise-jazz-orange-t19/jukebox-bamboo-fox)
 
-This repo is just a sandbox to test some configurations and pipelines currently it's a gallery website for p5.js sketches built with Next.js. 
+This repo is just a sandbox to break and test some configurations and pipelines currently it's a gallery website for p5.js sketches built with Next.js. 
 
 ### How to run
 
