@@ -15,7 +15,8 @@
     "export": "next build & next export",
     "deploy": "now",
     "new-sketch": "scripts/new-sketch.sh",
-    "postinstall": "next build"
+    "postinstall": "next build",
+    "test": "scripts/test"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
