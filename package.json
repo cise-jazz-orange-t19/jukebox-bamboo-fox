@@ -1,7 +1,12 @@
 {
-  "name": "dailyp5",
+  "name": "jukebox-bamboo-fox",
   "version": "1.0.0",
   "description": "A gallery website for p5.js sketches built with Next.js",
+  "keywords": [
+    "p5",
+    "next.js"
+  ],
+  "license": "MIT",
   "main": "index.js",
   "scripts": {
     "dev": "node server.js",
