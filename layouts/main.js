@@ -5,7 +5,7 @@ export default ({ children }) => (
   <div className="main">
     <div className="logo">
       <Link prefetch href="/">
-        <a>daily p5</a>
+        <a>Node.js / next.js / p5.js</a>
       </Link>
     </div>
 
