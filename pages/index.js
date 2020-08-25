@@ -1,65 +1,67 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import React, { Component } from "react";
+import Head from "next/head";
+import dynamic from "next/dynamic";
 
-export default function Home() {
-  return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+import "../layouts/global.css";
+import Main from "../layouts/main";
+import { Router } from "../routes";
+import { range } from "../utils/utils";
+import Const from "../utils/constants";
 
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
+const P5Wrapper = dynamic(import("react-p5-wrapper"), {
+  ssr: false,
+  loading: () => <div className="sketch-holder">Loading...</div>,
+});
 
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+class IndexPage extends Component {
+  render() {
+    const TOTAL_SKETCHES = Const.sketchesCount;
+    return (
+      <Main>
+        <Head>
+          <title>Node.js / next.js / p5.js</title>
+        </Head>
+        <div>
+          <h2>Sketches</h2>
+          <div>
+            {range(TOTAL_SKETCHES).map((i) => {
+              const ind = i + 1;
+              const sketch = require(`../sketches/d${ind}`).default;
+              return (
+                <div key={`sketch-${ind}`} className="sketch-container">
+                  <div className="sketch-holder">
+                    <P5Wrapper sketch={sketch(200, 200)} />
+                  </div>
+                  <a
+                    className="primary-button"
+                    onClick={() => Router.pushRoute(`/s/${ind}`)}
+                  >
+                    View {ind}
+                  </a>
+                </div>
+              );
+            })}
+          </div>
         </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
-  )
+        <style jsx>{`
+          .sketch-container {
+            border-width: 1px;
+            border-style: solid;
+            display: inline-block;
+            margin: 8px;
+          }
+          .sketch-holder {
+            width: 200px;
+            height: 200px;
+            display: -webkit-flex;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+        `}</style>
+      </Main>
+    );
+  }
 }
+
+export default IndexPage;
