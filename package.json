@@ -7,6 +7,10 @@
     "next.js"
   ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ashleygwilliams/my_package.git"
+  },
   "main": "index.js",
   "scripts": {
     "dev": "node server.js",
@@ -15,7 +19,8 @@
     "export": "next build & next export",
     "deploy": "now",
     "new-sketch": "scripts/new-sketch.sh",
-    "postinstall": "next build"
+    "postinstall": "next build",
+    "test": "echo \"Hello, world!\""
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
