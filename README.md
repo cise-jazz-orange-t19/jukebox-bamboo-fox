@@ -5,8 +5,8 @@ This repo is just a sandbox to break and test some configurations and pipelines 
 
 ### How to run
 
-1. `yarn`
-2. `yarn dev`
+1. `npm install`
+2. `npm run dev`
 3. Go to `http://localhost:3000`
 
 ### Navigation
