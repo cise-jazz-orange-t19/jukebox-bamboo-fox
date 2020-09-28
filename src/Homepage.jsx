@@ -53,7 +53,7 @@ export default class Homepage extends React.Component {
                         <Space direction="vertical" size={12}>
                             <RangePicker style={{ width: 600 }} />
 
-                        </Space>,
+                        </Space>
                     </div>
                     <div className="conditon">
                         <div className="field">
